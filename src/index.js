@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Login from './screens/login/Login.js';
 
 ReactDOM.render(
-  <span>
-      Image Viewer
-  </span>, 
+  <div>
+      <Login />
+  </div>, 
   document.getElementById('root')
 );
 
