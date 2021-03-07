@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -48,7 +49,7 @@ class Login extends Component {
             this.setState({passwordRequiredMsg: 'dispNone'});
 
             sessionStorage.setItem("access-token", accessToken);
-            ReactDOM.render(<Home />, document.getElementById('root'));
+            this.props.history.push("/home");
         }
         else {
             this.setState({incorrectCredentialsMsg: 'dispBlock'})
