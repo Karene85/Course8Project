@@ -1,0 +1,28 @@
+.login-card-container {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.login-card {
+    width: 280px;
+    padding: 32px 64px 32px 64px;
+    margin: auto;
+    text-align: left;
+}
+
+.login-btn {
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
+}
