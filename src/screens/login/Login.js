@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -10,7 +8,6 @@ import Input from '@material-ui/core/Input';
 import Button from '@material-ui/core/Button';
 import './Login.css';
 import Header from '../../common/header/Header.js';
-import Home from '../home/Home';
 import { FormHelperText } from '@material-ui/core';
 
 class Login extends Component {
@@ -22,7 +19,7 @@ class Login extends Component {
             password: "",
             incorrectCredentialsMsg: 'dispNone',
             usernameRequiredMsg: 'dispNone',
-            passwordRequiredMsg: 'dispNone'
+            passwordRequiredMsg: 'dispNone',
         }
     }
 
