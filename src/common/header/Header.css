@@ -2,6 +2,8 @@
     background-color: #263238;
     padding: 0;
     margin: 0;
+    display: flex;
+    height: 80px;
 }
 
 .logo {
@@ -16,17 +18,21 @@
     width: 300px;
     border-radius: 4px;
     background-color: #c0c0c0;
-    float: right;
+    align-self: right;
     vertical-align: middle;
+    margin: 10px;
 }
 
 .profile-pic {
-    float: right;
     vertical-align: middle;
+    align-self: right;
 }
 
 #profile-pic-img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
+    border-color: #fff;
+    vertical-align: middle;
 }
