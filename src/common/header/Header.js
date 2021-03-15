@@ -9,6 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import './Header.css';
 import Profile from '../../screens/profile/Profile';
 import Login from '../../screens/login/Login';
+import Home from '../../screens/home/Home';
 
 
 class Header extends Component {
@@ -18,7 +19,8 @@ class Header extends Component {
         this.state = {
             profile_picture: "http://www.siggraph.org/sites/default/files/styles/full_news/public/field/image/women-code.jpg?itok=5Sr7oxlt",
             searchInput: "",
-            showProfilePicMenu: false
+            showProfilePicMenu: false,
+            showProfilePicMenu2: false
         }
     }
 
@@ -27,7 +29,14 @@ class Header extends Component {
     }
 
     profilePicClickHandler = () => {
-        this.setState({showProfilePicMenu: true});
+        if (this.props.showMyAccountOption === 'false') {
+            this.setState({showProfilePicMenu2: true});
+            this.setState({showProfilePicMenu: false});
+        } else {
+            this.setState({showProfilePicMenu: true});
+            this.setState({showProfilePicMenu2: false});
+        }
+        
     }
 
     logoutClickHandler = () => {
@@ -39,6 +48,13 @@ class Header extends Component {
         ReactDOM.render(<Profile />, document.getElementById('root'));
     }
 
+    logoClickHandler = () => {
+        if (this.props.logoClickable === 'true') {
+            
+            ReactDOM.render(<Home />, document.getElementById('root'));
+        }
+    }
+
 
 
     render() {
@@ -46,7 +62,7 @@ class Header extends Component {
             <div>
                 <header className='app-header'>
                     <div className='logo'>
-                        <Typography>Image Viewer</Typography>
+                        <Typography onClick={this.logoClickHandler}>Image Viewer</Typography>
                     </div>
                     {
                         this.props.showSearchBox === 'true' ?
@@ -69,6 +85,17 @@ class Header extends Component {
                                     <div className='profile-pic-menu'>
                                     <MenuList>
                                         <MenuItem onClick={this.myAccountClickHandler}>My Account</MenuItem>
+                                        <hr />
+                                        <MenuItem onClick={this.logoutClickHandler}>Logout</MenuItem>
+                                    </MenuList>
+                                    </div>
+                                ) : (null)
+                            }
+
+{
+                                this.state.showProfilePicMenu2 ? (
+                                    <div className='profile-pic-menu2'>
+                                    <MenuList>
                                         <MenuItem onClick={this.logoutClickHandler}>Logout</MenuItem>
                                     </MenuList>
                                     </div>
